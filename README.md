@@ -1,4 +1,4 @@
-# Chef's-Table
+# Chef's Table Game 
 Being a chef is not easy! If you miss an ingredient you migth end up with a completely different dish and some angry customers. Also, you can get cut with kitchen knives. The object of the game is to help Chef Cocô to get all the ingredients he needs on time without being hurt.
 
 ## How does it work?
