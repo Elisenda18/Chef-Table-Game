@@ -36,6 +36,27 @@ HTML5, DOM, **Canvas** and Vanilla **Javascript**
   * If there is a collision with a knive => Game Over => Show Game Over Screen
 * * *
 
+### User stories
+- User can see a readme file with all the game instructions
+- User can see the Start Screen
+- User can click on the "Start Game" button
+- User can see the Game Screen
+- User can see the Canvas
+- User can see the Player
+- User can see a Canvas background image
+- User can move the Player left and right
+- User can move the Player up and down
+- User can see an ingredient in the canvas
+- User can pick up the ingredient (collide)
+- User can see its points/score increasing
+- User can see a knife in the canvas
+- User can be killed when colliding with a knife
+- User can see a countdown timer
+- User can see the Game Over Screen
+- User can see a Play again button
+- User can click on Play again button
+- User can see its total score
+
 ## BACK LOG
 ### Music
 * Add music on and off button to setup
