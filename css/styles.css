@@ -3,27 +3,14 @@ body {
   font-size: 16px;
 }
 
-.container {
+#game-container {
   margin: 0 auto;
   width: 500px;
 }
 
-canvas#chef {
+canvas#chefCanvas {
   margin: 0 auto;
   border: 1px solid black;
-}
-
-
-.splash {
-  width: 980px;
-  height: 579px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.hide {
-  display: none;
 }
 
 button {
