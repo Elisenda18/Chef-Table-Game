@@ -19,16 +19,4 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     }
 
-
-
-    
-
-
-
-
-
-
-
-
-
 })
