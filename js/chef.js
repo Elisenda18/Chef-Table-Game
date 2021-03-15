@@ -9,30 +9,37 @@ class Chef {
         this.maxColumns = maxColumns;
         this.maxRows = maxRows;
         this.score = 0;
+        this.currentPosition = {...this.initialPosition};
     }
 
     goUp() {
-        this.initialPosition.row = (this.initialPosition.row - 1 + this.maxRows) % this.maxRows;
+        this.currentPosition.row = (this.currentPosition.row - 1 + this.maxRows) % this.maxRows;
+        console.log(this.currentPosition);
     }
 
     goDown() {
-        this.initialPosition.row = (this.initialPosition.row + 1) % this.maxRows;
+        this.currentPosition.row = (this.currentPosition.row + 1) % this.maxRows;
+        console.log(this.currentPosition);
     }
 
     goLeft() {
-        this.initialPosition.column = (this.initialPosition.column - 1 + this.maxColumns) % this.maxColumns;
+        this.currentPosition.column = (this.currentPosition.column - 1 + this.maxColumns) % this.maxColumns;
+        console.log(this.currentPosition);
+
     }
 
     goRight() {
-        this.initialPosition.column = (this.initialPosition.column + 1) % this.maxColumns;
+        this.currentPosition.column = (this.currentPosition.column + 1) % this.maxColumns;
+        console.log(this.currentPosition);
+
     }
     
     collidesWithObstacle() {
 
     }
 
-    takesIngredient() {
-
+    takesIngredient(ingredient) {
+        return this.currentPosition.row === ingredient.row && this.currentPosition.column === ingredient.column;
     }
 
     scoreUp() {

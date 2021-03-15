@@ -20,12 +20,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
         const startBtn = document.getElementById("start-btn");
         startBtn.addEventListener("click", () => {
             const chefsGame = new Game(
-                {
+               {
                     ctx: ctx,
                     rows: canvas.width/10,
                     columns: canvas.height/10,
                     maxCells: 10,
-                    chef: new Chef(canvas.width/10, canvas.height/10)
+                    chef: new Chef(canvas.width/10, canvas.height/10),
+                    ingredients: new Ingredients(canvas.width/10, canvas.height/10),
                 },
             );
 
