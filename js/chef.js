@@ -14,9 +14,40 @@ class Chef {
 
     _move() {
 
+        switch (this.direction) {
+            case "up":
+                this.initialPosition = {
+                    row: (this.initialPosition.row + 1) % this.maxRows,
+                    column: this.initialPosition.column,
+                }
+                break;
+
+            case "down":
+                this.initialPosition = {
+                    row: (this.initialPosition.row - 1) % this.maxRows,
+                    column: this.initialPosition.column,
+                }
+                break;
+            case "left":
+                this.initialPosition = {
+                    row: this.initialPosition.row,
+                    column: (this.initialPosition.column -1 + this.maxColumns) % this.maxColumns,
+                }
+                break;
+            case "right":
+                this.initialPosition = {
+                    row: this.initialPosition.row,
+                    column: (this.initialPosition.column + 1) % this.maxColumns,
+                }
+                break;
+            default:
+                break;
+        }
+
     }
 
     _goUp() {
+        
 
     }
 

@@ -17,9 +17,32 @@ class Game {
         this.ctx.fillRect(
             this.chef.initialPosition.row * this.maxCells,
             this.chef.initialPosition.column * this.maxCells,
-            10,
-            10
+            8,
+            8
         )
+    }
+
+    _assignControlsToKeys() {
+        document.addEventListener("keydown", (event) => {
+            switch (event.code) {
+                case "ArrowUp":
+                    
+                    break;
+            
+                default:
+                    break;
+            }
+        })
+    }
+
+
+
+    _clean() {
+
+    }
+
+    _update() {
+        
     }
 
     _start() {
