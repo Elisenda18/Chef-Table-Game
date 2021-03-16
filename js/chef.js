@@ -34,8 +34,8 @@ class Chef {
 
     }
     
-    collidesWithObstacle() {
-
+    collidesWithKnifes(knife) {
+        return this.currentPosition.row === knife.row && this.currentPosition.column === knife.column;
     }
 
     takesIngredient(ingredient) {

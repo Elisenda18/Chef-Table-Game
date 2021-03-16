@@ -75,14 +75,25 @@ class Game {
         this._clean();
         this._drawChef();
         this._drawIngredient();
+
+        //Taking ingredients
         if (this.chef.takesIngredient(this.ingredienToPrint[0])) {
             this.ingredienToPrint.pop();
             this._generateIngredient();
             this.chef.scoreUp();
         }
+
+        //Knifes
         this.knifesToPrint.forEach(knife => {
             knife._draw(this.ctx);
-        });
+        });    
+        
+        //Colliding with knifes
+        for(let i= 0; i< this.knifesToPrint.length; i++) {
+            if(this.chef.collidesWithKnifes(this.knifesToPrint[i])) {
+                this.cb();
+            }
+        }
 
         window.requestAnimationFrame(this._update.bind(this));
     }
@@ -93,7 +104,7 @@ class Game {
        this._generateIngredient();
        setInterval(() => {
         this._generateKnife();
-      }, 2000);
+       }, 2000);
        window.requestAnimationFrame(this._update.bind(this));
     }
 

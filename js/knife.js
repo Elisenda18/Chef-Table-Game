@@ -4,6 +4,11 @@ class Knife {
     constructor(maxRows, maxColumns){
         this.maxRows = maxRows;
         this.maxColumns = maxColumns;
+        /*this.element = {
+            column: Math.floor(Math.random() * this.maxColumns),
+            row: Math.floor(Math.random() * this.maxRows),
+        }
+        */
         this.column = Math.floor(Math.random() * this.maxColumns);
         this.row = Math.floor(Math.random() * this.maxRows);
         this.img = new Image();

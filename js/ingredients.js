@@ -25,5 +25,5 @@ class Ingredients {
               },
         ];
         this.list = [...this.ingredientsList];
-    }       
+    }  
 }

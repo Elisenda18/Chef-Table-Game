@@ -28,11 +28,17 @@ document.addEventListener("DOMContentLoaded", ()=> {
                     chef: new Chef(canvas.width/10, canvas.height/10),
                     ingredients: new Ingredients(canvas.width/10, canvas.height/10),
                 },
+                gameOver
             );
 
             chefsGame._start()
         })
 
+    }
+
+    function gameOver() {
+        document.getElementById("game").style ="display: none;";
+        document.getElementById("gameover").style="display: block;"
     }
 
 })
