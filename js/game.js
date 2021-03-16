@@ -1,7 +1,7 @@
 'use strict';
 
 class Game {
-    constructor(options, callback) {
+    constructor(options, gameOver, gameWon) {
         this.ctx = options.ctx;
         this.chef = options.chef;
         this.rows = options.rows;
@@ -11,7 +11,8 @@ class Game {
         this.ingredienToPrint = [];
         this.knife = options.knife;
         this.knifesToPrint = [];
-        this.cb = callback;
+        this.gameOver = gameOver;
+        this.gameWon = gameWon;
     }
 
     _drawChef() {
@@ -83,6 +84,12 @@ class Game {
             this.chef.scoreUp();
         }
 
+        //If the player has take all the ingredients needed > Game Won
+        if(this.ingredients.list.length === 0){
+            this.gameWon();
+            return this._clean();
+        }
+
         //Knifes
         this.knifesToPrint.forEach(knife => {
             knife._draw(this.ctx);
@@ -91,8 +98,9 @@ class Game {
         //Colliding with knifes
         for(let i= 0; i< this.knifesToPrint.length; i++) {
             if(this.chef.collidesWithKnifes(this.knifesToPrint[i])) {
+                this.gameOver();
                 this._clean();
-                this.cb();
+                return
             }
         }
 

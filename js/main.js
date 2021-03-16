@@ -7,18 +7,26 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const canvas = document.getElementById("chefCanvas");
     const ctx = canvas.getContext("2d");
 
-    const playBtn = document.getElementById("play-btn");
+    //Splash Screen
+    const playBtn = document.getElementById("play");
     playBtn.addEventListener("click", startGame);
 
-    const playAgainBtn = document.getElementById("start-again");
-    playAgainBtn.addEventListener("click", startGame);
+    //GameOver Screen
+    const gameOverBtn = document.getElementById("gameover");
+    gameOverBtn.addEventListener("click", startGame);
+
+    //GameWon Screen
+    const gameWonBtn = document.getElementById("gamewon");
+    gameWonBtn.addEventListener("click", startGame);
+
 
     function startGame() {
         document.getElementById("splash-screen").style ="display: none;";
         document.getElementById("gameover").style ="display: none;";
+        document.getElementById("gamewon").style="display: none;";
         document.getElementById("game").style="display: block;"
 
-        const startBtn = document.getElementById("start-btn");
+        const startBtn = document.getElementById("start");
         startBtn.addEventListener("click", () => {
             const chefsGame = new Game(
                {
@@ -29,9 +37,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
                     chef: new Chef(canvas.width/10, canvas.height/10),
                     ingredients: new Ingredients(canvas.width/10, canvas.height/10),
                 },
-                gameOver
+                gameOver,
+                gameWon
             );
-
             chefsGame._start()
         })
     }
@@ -39,6 +47,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
     function gameOver() {
         document.getElementById("game").style ="display: none;";
         document.getElementById("gameover").style="display: block;";
+    }
+
+    function gameWon() {
+        document.getElementById("game").style ="display: none;";
+        document.getElementById("gamewon").style="display: block;";
     }
 
 })
