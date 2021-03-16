@@ -8,14 +8,14 @@ class Ingredients {
             {
                 name: "bread",
                 img: "./img/bread-min.png",
-                column: 20,
-                row: 40,
+                column: Math.floor(Math.random() * this.maxColumns),
+                row: Math.floor(Math.random() * this.maxRows),
               },
               {
-                  name: "cheese",
-                  img: "./img/cheese-min.png",
-                  column: Math.floor(Math.random() * this.maxColumns),
-                  row: Math.floor(Math.random() * this.maxRows),
+                name: "cheese",
+                img: "./img/cheese-min.png",
+                column: Math.floor(Math.random() * this.maxColumns),
+                row: Math.floor(Math.random() * this.maxRows),
               },
               {
                 name: "chooping board",
@@ -23,7 +23,7 @@ class Ingredients {
                 column: Math.floor(Math.random() * this.maxColumns),
                 row: Math.floor(Math.random() * this.maxRows),
               },
-        ]
-    }
-       
+        ];
+        this.list = [...this.ingredientsList];
+    }       
 }

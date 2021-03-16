@@ -24,9 +24,8 @@ class Game {
     }
 
     _generateIngredient() {
-        let newIngredientsList = [...this.ingredients.ingredientsList];
-        this.ingredient.unshift(this.ingredients.ingredientsList[0]);
-        console.log(this.ingredients.ingredientsList[0])
+        this.ingredient.unshift(this.ingredients.list[0]);
+        this.ingredients.list.splice(0,1);
     }
 
     _drawIngredient() {
@@ -70,12 +69,12 @@ class Game {
         this._clean();
         this._drawChef();
         this._drawIngredient();
-        if( this.chef.takesIngredient(this.ingredient[0])) {
+        if (this.chef.takesIngredient(this.ingredient[0])) {
             this.ingredient.pop();
             this._generateIngredient();
+            this.chef.scoreUp();
         }
         window.requestAnimationFrame(this._update.bind(this));
-        
     }
 
     _start() {
