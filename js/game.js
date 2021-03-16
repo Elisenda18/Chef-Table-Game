@@ -8,8 +8,9 @@ class Game {
         this.columns = options.columns;
         this.maxCells = options.maxCells; 
         this.ingredients = options.ingredients;
-        this.ingredient = [];
-        this.knifes = options.knifes;
+        this.ingredienToPrint = [];
+        this.knife = options.knife;
+        this.knifesToPrint = [];
         this.cb = callback;
     }
 
@@ -24,18 +25,23 @@ class Game {
     }
 
     _generateIngredient() {
-        this.ingredient.unshift(this.ingredients.list[0]);
+        this.ingredienToPrint.unshift(this.ingredients.list[0]);
         this.ingredients.list.splice(0,1);
     }
 
     _drawIngredient() {
         this.ctx.fillStyle = "green";
         this.ctx.fillRect(
-            this.ingredient[0].column * this.maxCells,
-            this.ingredient[0].row * this.maxCells,
+            this.ingredienToPrint[0].column * this.maxCells,
+            this.ingredienToPrint[0].row * this.maxCells,
             8,
             8,
         );
+    }
+
+    _generateKnife() {
+        let newKinfe = new Knife(50, 50);
+        this.knifesToPrint.push(newKinfe);
     }
 
     _assignControlsToKeys() {
@@ -69,11 +75,15 @@ class Game {
         this._clean();
         this._drawChef();
         this._drawIngredient();
-        if (this.chef.takesIngredient(this.ingredient[0])) {
-            this.ingredient.pop();
+        if (this.chef.takesIngredient(this.ingredienToPrint[0])) {
+            this.ingredienToPrint.pop();
             this._generateIngredient();
             this.chef.scoreUp();
         }
+        this.knifesToPrint.forEach(knife => {
+            knife._draw(this.ctx);
+        });
+
         window.requestAnimationFrame(this._update.bind(this));
     }
 
@@ -81,6 +91,9 @@ class Game {
        this._assignControlsToKeys();
        this._drawChef();
        this._generateIngredient();
+       setInterval(() => {
+        this._generateKnife();
+      }, 2000);
        window.requestAnimationFrame(this._update.bind(this));
     }
 
