@@ -18,10 +18,10 @@ class Game {
     _drawChef() {
         this.ctx.fillStyle = "red";
         this.ctx.fillRect(
-            this.chef.currentPosition.column * this.maxCells,
-            this.chef.currentPosition.row * this.maxCells,
-            8,
-            8
+            this.chef.currentPosition.column,
+            this.chef.currentPosition.row,
+            10,
+            10
         )
     }
 
@@ -33,10 +33,10 @@ class Game {
     _drawIngredient() {
         this.ctx.fillStyle = "green";
         this.ctx.fillRect(
-            this.ingredienToPrint[0].column * this.maxCells,
-            this.ingredienToPrint[0].row * this.maxCells,
-            8,
-            8,
+            this.ingredienToPrint[0].column,
+            this.ingredienToPrint[0].row,
+            this.ingredienToPrint[0].width,
+            this.ingredienToPrint[0].height,
         );
     }
 
@@ -83,7 +83,7 @@ class Game {
         this._drawIngredient();
 
         //Taking ingredients
-        if (this.chef.takesIngredient(this.ingredienToPrint[0])) {
+        if (this.chef.takesIngredient(this.chef.currentPosition, this.ingredienToPrint[0])) {
             this.ingredienToPrint.pop();
             this._generateIngredient();
             this.chef.scoreUp();
