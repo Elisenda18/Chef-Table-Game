@@ -41,7 +41,12 @@ class Game {
     }
 
     _generateKnife() {
-        let newKinfe = new Knife(50, 50);
+        let newKinfe = new Knife(
+            Math.floor(Math.random() * 500), 
+            Math.floor(Math.random() * 500),
+            10,
+            10
+        );
         this.knifesToPrint.push(newKinfe);
     }
 
@@ -85,7 +90,7 @@ class Game {
         }
 
         //If the player has take all the ingredients needed > Game Won
-        if(this.ingredients.list.length === 0){
+        if(!this.ingredients.list.length){
             this.gameWon();
             return this._clean();
         }
