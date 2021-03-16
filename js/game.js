@@ -91,6 +91,7 @@ class Game {
         //Colliding with knifes
         for(let i= 0; i< this.knifesToPrint.length; i++) {
             if(this.chef.collidesWithKnifes(this.knifesToPrint[i])) {
+                this._clean();
                 this.cb();
             }
         }

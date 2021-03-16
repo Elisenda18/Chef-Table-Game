@@ -10,11 +10,12 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const playBtn = document.getElementById("play-btn");
     playBtn.addEventListener("click", startGame);
 
-
+    const playAgainBtn = document.getElementById("start-again");
+    playAgainBtn.addEventListener("click", startGame);
 
     function startGame() {
-
         document.getElementById("splash-screen").style ="display: none;";
+        document.getElementById("gameover").style ="display: none;";
         document.getElementById("game").style="display: block;"
 
         const startBtn = document.getElementById("start-btn");
@@ -33,12 +34,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
             chefsGame._start()
         })
-
     }
 
     function gameOver() {
         document.getElementById("game").style ="display: none;";
-        document.getElementById("gameover").style="display: block;"
+        document.getElementById("gameover").style="display: block;";
     }
 
 })
