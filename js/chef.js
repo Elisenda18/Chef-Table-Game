@@ -31,13 +31,23 @@ class Chef {
     }
 
     takesIngredient(chef, ingredient) {
+        
         return !(
-            ((chef.row + ingredient.height) < (ingredient.row)) ||
+            ((chef.row + chef.height) < (ingredient.row)) ||
             (chef.row > (ingredient.row + ingredient.height)) ||
             ((chef.column + chef.width) < ingredient.column) ||
             (chef.column > (ingredient.column + ingredient.width))
-        ); 
+        );
+        /*
         //There is a bug in the chef.column, it "collides" when moving the column up & down
+
+        const takesRight = chef.column + chef.width / 2 > ingredient.column - ingredient.width / 2;
+        const takesLeft = chef.column - chef.width / 2 < ingredient.column + ingredient.width / 2;
+        const takesTop = chef.row + chef.height / 2 > ingredient.row - ingredient.height / 2;
+        const takesBottom = chef.row - chef.height / 2 < ingredient.row + ingredient.height / 2;
+
+        if (takesRight || takesLeft || takesTop || takesBottom) return true
+        */
     }
 
     scoreUp() {

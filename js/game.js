@@ -84,6 +84,7 @@ class Game {
 
         //Taking ingredients
         if (this.chef.takesIngredient(this.chef.currentPosition, this.ingredienToPrint[0])) {
+            console.log("its colliding")
             this.ingredienToPrint.pop();
             this._generateIngredient();
             this.chef.scoreUp();
