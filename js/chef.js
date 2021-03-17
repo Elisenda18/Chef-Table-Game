@@ -6,8 +6,6 @@ class Chef {
             column: 250, 
             row: 490, 
         };
-        //this.maxColumns = maxColumns;
-        //this.maxRows = maxRows;
         this.score = 0;
         this.currentPosition = {...this.initialPosition};
     }
