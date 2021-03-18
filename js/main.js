@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
     }
 
     function animateScript() {
-
         let position = 123.5;
         setInterval ( () => {
             document.getElementById("image").style.backgroundPosition = 
@@ -63,6 +62,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
             else
             { position = 123.5; }
             }, 500 ); 
-        }
+    }
 
 })

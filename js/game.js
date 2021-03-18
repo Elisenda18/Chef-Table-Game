@@ -20,8 +20,8 @@ class Game {
         this.ctx.fillRect(
             this.chef.currentPosition.column,
             this.chef.currentPosition.row,
-            10,
-            10
+            this.chef.currentPosition.width,
+            this.chef.currentPosition.height
         )
     }
 
