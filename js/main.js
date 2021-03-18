@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     //Splash Screen
     const playBtn = document.getElementById("play");
     playBtn.addEventListener("click", startGame);
+    animateScript();
 
     //GameOver Screen
     const gameOverBtn = document.getElementById("gameover");
@@ -50,5 +51,18 @@ document.addEventListener("DOMContentLoaded", ()=> {
         document.getElementById("game").style ="display: none;";
         document.getElementById("gamewon").style="display: block;";
     }
+
+    function animateScript() {
+
+        let position = 123.5;
+        setInterval ( () => {
+            document.getElementById("image").style.backgroundPosition = 
+            `-${position}px 0px`; 
+            if (position < 600)
+            { position = position + 123.5;}
+            else
+            { position = 123.5; }
+            }, 500 ); 
+        }
 
 })

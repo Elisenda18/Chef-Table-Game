@@ -5,7 +5,7 @@ body {
 }
 
 body {
-    background: url("/img/background\ -\ copia.jpg") no-repeat center center fixed; 
+    background: url("/img/background.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -31,7 +31,7 @@ p {
   padding: 0.5rem;
   margin: 3rem auto;
   width: 1000px;
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -57,8 +57,14 @@ button {
   text-transform: uppercase;
 }
 
-/* Game Screen*/
+/* Splash Screen */
+#image {
+  height: 160px;
+  width: 122px;
+  background: url('/img/newSprite.png') 0px 0px;
+}
 
+/* Game Screen*/
 #instructions {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 1);
