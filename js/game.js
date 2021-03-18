@@ -12,16 +12,6 @@ class Game {
         this.gameWon = gameWon;
     }
 
-    _drawChef() {
-        this.ctx.fillStyle = "red";
-        this.ctx.fillRect(
-            this.chef.currentPosition.x,
-            this.chef.currentPosition.y,
-            this.chef.currentPosition.width,
-            this.chef.currentPosition.height
-        )
-    }
-
     _generateIngredient() {
         this.ingredienToPrint.unshift(this.ingredients.list[0]);
         this.ingredients.list.splice(0,1);
@@ -76,7 +66,7 @@ class Game {
 
     _update() {
         this._clean();
-        this._drawChef();
+        this.chef._draw(this.ctx);
         this._drawIngredient();
 
         //Taking ingredients
@@ -112,7 +102,7 @@ class Game {
 
     _start() {
        this._assignControlsToKeys();
-       this._drawChef();
+       this.chef._draw(this.ctx);
        this._generateIngredient();
        setInterval(() => {
         this._generateKnife();

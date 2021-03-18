@@ -4,12 +4,24 @@ class Chef {
     constructor() {
         this.initialPosition = {
             x: 250, 
-            y: 490, 
-            width: 10,
-            height: 10
+            y: 420, 
+            width: 80,
+            height: 80
         };
         this.score = 0;
         this.currentPosition = {...this.initialPosition};
+        this.imageChef = new Image ();
+    }
+
+    _draw(ctx) {
+        this.imageChef.src = "/img/chef-min.png";
+        ctx.drawImage(
+            this.imageChef, 
+            this.currentPosition.x, 
+            this.currentPosition.y, 
+            this.currentPosition.width,
+            this.currentPosition.height
+        )
     }
 
     goUp() {
