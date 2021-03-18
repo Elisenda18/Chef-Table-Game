@@ -10,6 +10,18 @@ class Game {
         this.knifesToPrint = [];
         this.gameOver = gameOver;
         this.gameWon = gameWon;
+        this.background = new Image();
+    }
+
+    _drawBackground () {
+        this.background.src = "/img/imgback.png";
+        this.ctx.drawImage(
+            this.background,
+            0,
+            0,
+            500,
+            500
+        )
     }
 
     _generateIngredient() {
@@ -18,8 +30,9 @@ class Game {
     }
 
     _drawIngredient() {
-        this.ctx.fillStyle = "green";
-        this.ctx.fillRect(
+        this.ingredients.imageIngredient.src = this.ingredienToPrint[0].img;
+        this.ctx.drawImage(
+            this.ingredients.imageIngredient,
             this.ingredienToPrint[0].x,
             this.ingredienToPrint[0].y,
             this.ingredienToPrint[0].width,
@@ -29,10 +42,10 @@ class Game {
 
     _generateKnife() {
         let newKinfe = new Knife(
-            Math.floor(Math.random() * 500), 
-            Math.floor(Math.random() * 500),
-            10,
-            10
+            Math.floor(Math.random() * (440 - 60) + 60), 
+            Math.floor(Math.random() * (440 - 60) + 60),
+            30,
+            35
         );
         this.knifesToPrint.push(newKinfe);
     }
@@ -66,6 +79,7 @@ class Game {
 
     _update() {
         this._clean();
+        this._drawBackground();
         this.chef._draw(this.ctx);
         this._drawIngredient();
 
@@ -101,6 +115,7 @@ class Game {
     }
 
     _start() {
+       this._drawBackground();
        this._assignControlsToKeys();
        this.chef._draw(this.ctx);
        this._generateIngredient();
