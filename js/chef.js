@@ -3,8 +3,8 @@
 class Chef {
     constructor() {
         this.initialPosition = {
-            column: 250, 
-            row: 490, 
+            x: 250, 
+            y: 490, 
             width: 10,
             height: 10
         };
@@ -13,31 +13,27 @@ class Chef {
     }
 
     goUp() {
-        this.currentPosition.row = (this.currentPosition.row - 5 + 500) % 500;
+        this.currentPosition.y = (this.currentPosition.y - 5 + 500) % 500;
     }
 
     goDown() {
-        this.currentPosition.row = (this.currentPosition.row + 5) % 500;
+        this.currentPosition.y = (this.currentPosition.y + 5) % 500;
     }
 
     goLeft() {
-        this.currentPosition.column = (this.currentPosition.column - 5 + 500) % 500;
+        this.currentPosition.x = (this.currentPosition.x - 5 + 500) % 500;
     }
 
     goRight() {
-        this.currentPosition.column = (this.currentPosition.column + 5) % 500;
-    }
-    
-    collidesWithKnifes(knife) {
-        return this.currentPosition.row === knife.row && this.currentPosition.column === knife.column;
+        this.currentPosition.x = (this.currentPosition.x + 5) % 500;
     }
 
-    takesIngredient(chef, ingredient) {
+    collidesWithObject(chef, object) {
         return !(
-            ((chef.row + chef.height) < (ingredient.row)) ||
-            (chef.row > (ingredient.row + ingredient.height)) ||
-            ((chef.column + chef.width) < ingredient.column) ||
-            (chef.column > (ingredient.column + ingredient.width))
+            ((chef.y + chef.height) < (object.y)) ||
+            (chef.y > (object.y + object.height)) ||
+            ((chef.x + chef.width) < object.x) ||
+            (chef.x > (object.x + object.width))
         );
     }
 

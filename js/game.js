@@ -4,9 +4,6 @@ class Game {
     constructor(options, gameOver, gameWon) {
         this.ctx = options.ctx;
         this.chef = options.chef;
-        this.rows = options.rows;
-        this.columns = options.columns;
-        this.maxCells = options.maxCells; 
         this.ingredients = options.ingredients;
         this.ingredienToPrint = [];
         this.knife = options.knife;
@@ -18,8 +15,8 @@ class Game {
     _drawChef() {
         this.ctx.fillStyle = "red";
         this.ctx.fillRect(
-            this.chef.currentPosition.column,
-            this.chef.currentPosition.row,
+            this.chef.currentPosition.x,
+            this.chef.currentPosition.y,
             this.chef.currentPosition.width,
             this.chef.currentPosition.height
         )
@@ -33,8 +30,8 @@ class Game {
     _drawIngredient() {
         this.ctx.fillStyle = "green";
         this.ctx.fillRect(
-            this.ingredienToPrint[0].column,
-            this.ingredienToPrint[0].row,
+            this.ingredienToPrint[0].x,
+            this.ingredienToPrint[0].y,
             this.ingredienToPrint[0].width,
             this.ingredienToPrint[0].height,
         );
@@ -83,7 +80,7 @@ class Game {
         this._drawIngredient();
 
         //Taking ingredients
-        if (this.chef.takesIngredient(this.chef.currentPosition, this.ingredienToPrint[0])) {
+        if (this.chef.collidesWithObject(this.chef.currentPosition, this.ingredienToPrint[0])) {
             console.log("its colliding")
             this.ingredienToPrint.pop();
             this._generateIngredient();
@@ -103,7 +100,7 @@ class Game {
         
         //Colliding with knifes
         for(let i= 0; i< this.knifesToPrint.length; i++) {
-            if(this.chef.collidesWithKnifes(this.knifesToPrint[i])) {
+            if(this.chef.collidesWithObject(this.chef.currentPosition,this.knifesToPrint[i])) {
                 this.gameOver();
                 this._clean();
                 return
