@@ -14,7 +14,7 @@ class Game {
     }
 
     _drawBackground () {
-        this.background.src = "/img/imgback.png";
+        //this.background.src = "/img/gameboard2-minmin.png";
         this.ctx.drawImage(
             this.background,
             0,
@@ -40,10 +40,21 @@ class Game {
         );
     }
 
+    _getRandomNumberExcludingPositions(positionElement, positionElement2){
+        let arr = [];
+          for( let i= 40; i<= 440; i++){
+              arr.push(i);
+        }
+  
+        let filterArr = arr.filter(item => !positionElement.includes(item) && !positionElement2.includes(item));
+        let randomIndexNumber = filterArr[Math.floor(Math.random()* filterArr.length)];
+        return randomIndexNumber;
+    }
+
     _generateKnife() {
         let newKinfe = new Knife(
-            Math.floor(Math.random() * (440 - 60) + 60), 
-            Math.floor(Math.random() * (440 - 60) + 60),
+            this._getRandomNumberExcludingPositions([this.chef.currentPosition.x], [this.ingredienToPrint[0].x]), 
+            this._getRandomNumberExcludingPositions([this.chef.currentPosition.y], [this.ingredienToPrint[0].y]), 
             30,
             35
         );
@@ -121,7 +132,7 @@ class Game {
        this._generateIngredient();
        setInterval(() => {
         this._generateKnife();
-       }, 2000);
+       }, 4000);
        window.requestAnimationFrame(this._update.bind(this));
     }
 
