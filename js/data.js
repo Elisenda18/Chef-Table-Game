@@ -90,3 +90,22 @@ const dataIngredients = [
         height: 30
     }
 ];
+
+
+
+const dataKnifes = [
+    new Knife(135, 345, 30, 35),
+    new Knife(280, 118, 30, 35),
+    new Knife(350, 100, 30, 35),
+    new Knife(80, 245, 30, 35),
+    new Knife(300, 425, 30, 35),
+    new Knife(400, 75, 30, 35),
+    new Knife(120, 420, 35),
+    new Knife(365, 145, 30, 35),
+    new Knife(415, 85, 30, 35),
+    new Knife(220, 320, 30, 35),
+    new Knife(190, 305, 30, 35),
+    new Knife(250, 400, 30, 35),
+];
+
+

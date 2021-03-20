@@ -6,7 +6,7 @@ class Game {
         this.chef = options.chef;
         this.ingredients = options.ingredients;
         this.ingredienToPrint = [];
-        this.knife = options.knife;
+        this.knife = dataKnifes;
         this.knifesToPrint = [];
         this.gameOver = gameOver;
         this.gameWon = gameWon;
@@ -14,7 +14,7 @@ class Game {
     }
 
     _drawBackground () {
-        //this.background.src = "/img/gameboard2-minmin.png";
+        this.background.src = "/img/board.jpg";
         this.ctx.drawImage(
             this.background,
             0,
@@ -40,25 +40,10 @@ class Game {
         );
     }
 
-    _getRandomNumberExcludingPositions(positionElement, positionElement2){
-        let arr = [];
-          for( let i= 40; i<= 440; i++){
-              arr.push(i);
-        }
-  
-        let filterArr = arr.filter(item => !positionElement.includes(item) && !positionElement2.includes(item));
-        let randomIndexNumber = filterArr[Math.floor(Math.random()* filterArr.length)];
-        return randomIndexNumber;
-    }
-
-    _generateKnife() {
-        let newKinfe = new Knife(
-            this._getRandomNumberExcludingPositions([this.chef.currentPosition.x], [this.ingredienToPrint[0].x]), 
-            this._getRandomNumberExcludingPositions([this.chef.currentPosition.y], [this.ingredienToPrint[0].y]), 
-            30,
-            35
-        );
-        this.knifesToPrint.push(newKinfe);
+    _generateKnife() {   
+        let newKnife = this.knife[Math.floor(Math.random() * (this.knife.length))];
+    
+        this.knifesToPrint.push(newKnife);
     }
 
     _assignControlsToKeys() {
@@ -67,7 +52,6 @@ class Game {
             switch (event.code) {
                 case "ArrowUp":
                     this.chef.goUp();
-                    console.log(this.chef.currentPosition)
                     break;
                 case "ArrowDown":
                     this.chef.goDown();
@@ -105,7 +89,9 @@ class Game {
         //If the player has take all the ingredients needed > Game Won
         if(!this.ingredients.list.length){
             this.gameWon();
-            return this._clean();
+            clearInterval(this.id);
+            this._clean();
+            return
         }
 
         //Knifes
@@ -117,6 +103,7 @@ class Game {
         for(let i= 0; i< this.knifesToPrint.length; i++) {
             if(this.chef.collidesWithObject(this.chef.currentPosition,this.knifesToPrint[i])) {
                 this.gameOver();
+                clearInterval(this.id);
                 this._clean();
                 return
             }
@@ -130,10 +117,12 @@ class Game {
        this._assignControlsToKeys();
        this.chef._draw(this.ctx);
        this._generateIngredient();
-       setInterval(() => {
+       this.id = setInterval(() => {
         this._generateKnife();
-       }, 4000);
+       }, 5000);
        window.requestAnimationFrame(this._update.bind(this));
     }
+
+
 
 }
