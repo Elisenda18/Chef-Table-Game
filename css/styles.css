@@ -47,6 +47,10 @@ p {
   margin: 1em;
 }
 
+.col.--small {
+  width: 50%;
+}
+
 button {
   background-color:#fa5a5a;
   color: white;
@@ -64,7 +68,7 @@ button {
   background: url('/img/newSprite.png') 0px 0px;
 }
 
-/* Game Screen*/
+/* Instructions Screen*/
 #instructions {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 1);
@@ -77,7 +81,21 @@ button {
   font-weight: bold ;
 }
 
+/*Game Screen*/
 canvas#chefCanvas {
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
+
+.ingredients h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold ;
+}
+
+.ingredients li:before {
+  content: '+ ';
+  color: #e2311a;
+}
+
+

@@ -16,12 +16,12 @@
             <div class="col">
                 <h1>Chef's Table</h1>
                 <p>Being a chef is not easy, if you miss an ingredient you migth end up with a completely different dish and some angry customers.</p> 
-                <p>The goal of the game is help Chef Cocô to get all the ingredients he needs to cook a dish in less than 1 minute.</p>
+                <p>The goal of the game is to help Chef Cocô get all the ingredients he needs to cook a dish in less than 1 minute.</p>
                 <p>Will you make it?</p>
                 <div id="chefSprite">
                     <p id="image"> </p>
                   </div>
-                <button id = "play">Play Game</button>
+                <button id="play">Play Game</button>
             </div>
         </div>
 
@@ -43,13 +43,11 @@
         <!--Game Screen-->
         <div id="game" style="display: none;">
             <div class="grid-2-col">
-                <div class="col">
-                    <div id="instructions">
-                    <h2>Instructions</h2>
-                        <p>Use the arrow keys to move Chef Cocô around the kitchen table.</p>
-                        <p>Take care not to step into a knife or our Chef will ☠️!</p>
-                        <div id="timer">01:00</div>
-                    </div>
+                <div class="ingredients col --small">
+                    <h2>Ingredients List</h2>
+                        <ul id="list">
+                            <li>Your shopping basket is empty...</li>
+                        </ul>
                 </div>
                 <div class="col">
                     <canvas id="chefCanvas" width="500" height="500"></canvas>
@@ -73,7 +71,6 @@
             </div>
         </div>
     </div>
-    
 
     <script src="js/knife.js"></script>
     <script src="js/data.js"></script>
