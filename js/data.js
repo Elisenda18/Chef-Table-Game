@@ -2,7 +2,7 @@
 
 const dataIngredients = [
     {
-       name: "bread",
+       name: "Bread",
        img: "./img/bread-min.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -10,7 +10,7 @@ const dataIngredients = [
        height: 50
     },
     {
-       name: "cheese",
+       name: "Cheese",
        img: "./img/cheese-min.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -18,7 +18,7 @@ const dataIngredients = [
        height: 30
     },
     {
-       name: "chooping board",
+       name: "Chooping board",
        img: "./img/choppingboard-min.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -26,7 +26,7 @@ const dataIngredients = [
        height: 40
     },
     {
-       name: "cookbook",
+       name: "Cookbook",
        img: "./img/cookbook-min.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -34,7 +34,7 @@ const dataIngredients = [
        height: 40
     },
     {
-        name: "milk",
+        name: "Milk",
         img: "./img/milk-min.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -42,7 +42,7 @@ const dataIngredients = [
         height: 40
     },
     {
-        name: "mushrooms",
+        name: "Mushrooms",
         img: "./img/mushrooms-min.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -50,7 +50,7 @@ const dataIngredients = [
         height: 30
     },
     {
-        name: "pan",
+        name: "Pan",
         img: "./img/pan-min.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -58,7 +58,7 @@ const dataIngredients = [
         height: 30
     },
     {
-        name: "pineapple",
+        name: "Pineapple",
         img: "./img/pineapple-min.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -66,7 +66,7 @@ const dataIngredients = [
         height: 30
     },
     {
-        name: "salt & pepper",
+        name: "Salt & Pepper",
         img: "./img/salt&pepper-min.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -74,7 +74,7 @@ const dataIngredients = [
         height: 30
     },
     {
-        name: "spicy",
+        name: "Chilli Paprika",
         img: "./img/spicy-min.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
@@ -82,7 +82,7 @@ const dataIngredients = [
         height: 30
     },
     {
-        name: "tool",
+        name: "Palettte Knife",
         img: "./img/tool-min.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),

@@ -6,6 +6,7 @@ class Game {
         this.chef = options.chef;
         this.ingredients = options.ingredients;
         this.ingredienToPrint = [];
+        this.pickedIngredients = [];
         this.knife = dataKnifes;
         this.knifesToPrint = [];
         this.gameOver = gameOver;
@@ -46,6 +47,20 @@ class Game {
         this.knifesToPrint.push(newKnife);
     }
 
+
+    _renderIngredients() {
+        let list = document.getElementById("list");
+        list.innerHTML = "";
+
+        this.pickedIngredients.forEach((item) => {
+            let newItem = document.createElement("li");
+            newItem.innerHTML =`${item.name} was added to your basket`;
+            list.appendChild(newItem);
+        })
+    
+    }
+    
+
     _assignControlsToKeys() {
         document.addEventListener("keydown", (event) => {
             //As the player moves the Chef it's initial position gets updated & printed again
@@ -72,6 +87,15 @@ class Game {
         this.ctx.clearRect(0,0, 500, 500);
     }
 
+    _restoreDOMIngredientsList() {
+        let list = document.getElementById("list");
+        list.innerHTML = "";
+
+        let liItem = document.createElement("li");
+        liItem.innerHTML =`Your shopping basket is empty...`;
+        list.appendChild(liItem);
+    }
+
     _update() {
         this._clean();
         this._drawBackground();
@@ -80,17 +104,19 @@ class Game {
 
         //Taking ingredients
         if (this.chef.collidesWithObject(this.chef.currentPosition, this.ingredienToPrint[0])) {
-            console.log("its colliding")
-            this.ingredienToPrint.pop();
+            this.pickedIngredients.push(this.ingredienToPrint[0]);
+            console.log(this.pickedIngredients);
+            this._renderIngredients();
             this._generateIngredient();
             this.chef.scoreUp();
         }
 
         //If the player has take all the ingredients needed > Game Won
         if(!this.ingredients.list.length){
-            this.gameWon();
             clearInterval(this.id);
             this._clean();
+            this._restoreDOMIngredientsList()
+            this.gameWon();
             return
         }
 
@@ -102,9 +128,10 @@ class Game {
         //Colliding with knifes
         for(let i= 0; i< this.knifesToPrint.length; i++) {
             if(this.chef.collidesWithObject(this.chef.currentPosition,this.knifesToPrint[i])) {
-                this.gameOver();
                 clearInterval(this.id);
                 this._clean();
+                this._restoreDOMIngredientsList()
+                this.gameOver();
                 return
             }
         }
