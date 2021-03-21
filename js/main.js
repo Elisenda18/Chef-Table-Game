@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     //Splash Screen
     const playBtn = document.getElementById("play");
-    playBtn.addEventListener("click", startGame);
+    playBtn.addEventListener("click", getInstructions);
     animateScript();
 
     //GameOver Screen
@@ -20,26 +20,35 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const gameWonBtn = document.getElementById("gamewon");
     gameWonBtn.addEventListener("click", startGame);
 
+    function getInstructions() {
+        document.getElementById("splash-screen").style ="display: none;";
+        document.getElementById("instructions").style="display: block;";
+        document.getElementById("game").style="display: none;";
+        document.getElementById("gameover").style ="display: none;";
+        document.getElementById("gamewon").style="display: none;";
+
+        const startBtn = document.getElementById("start");
+        startBtn.addEventListener("click", startGame)
+    }
+
 
     function startGame() {
         document.getElementById("splash-screen").style ="display: none;";
+        document.getElementById("instructions").style="display: none;";
+        document.getElementById("game").style="display: block;";
         document.getElementById("gameover").style ="display: none;";
         document.getElementById("gamewon").style="display: none;";
-        document.getElementById("game").style="display: block;"
 
-        const startBtn = document.getElementById("start");
-        startBtn.addEventListener("click", () => {
-            const chefsGame = new Game(
-               {
-                    ctx: ctx,
-                    chef: new Chef(),
-                    ingredients: new Ingredients(),
-                },
+        const chefsGame = new Game(
+            {
+                ctx: ctx,
+                chef: new Chef(),
+                ingredients: new Ingredients(),
+            },
                 gameOver,
                 gameWon
-            );
-            chefsGame._start()
-        })
+        );
+        chefsGame._start()
     }
 
     function gameOver() {
