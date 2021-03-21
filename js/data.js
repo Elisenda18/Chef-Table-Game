@@ -18,7 +18,7 @@ const dataIngredients = [
        height: 30
     },
     {
-       name: "Chooping board",
+       name: "Chopping Board",
        img: "./img/choppingboard-min.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),

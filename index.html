@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chef's Tables Game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -15,9 +17,10 @@
         <div id="splash-screen">
             <div class="col">
                 <h1>Chef's Table</h1>
-                <p>Being a chef is not easy, if you miss an ingredient you migth end up with a completely different dish and some angry customers.</p> 
+                <p>Being a chef is not easy.</p>
+                <p>If you forget to add an ingredient, you migth end up with a completely different dish and some angry customers.</p> 
                 <p>The goal of the game is to help Chef Cocô get all the ingredients he needs to cook a dish in less than 1 minute.</p>
-                <p>Will you make it?</p>
+                <p><span>Will you make it in time?</span></p>
                 <div id="chefSprite">
                     <p id="image"> </p>
                   </div>
@@ -31,9 +34,11 @@
                 <div class="col">
                     <div id="instructions">
                     <h2>Instructions</h2>
-                        <p>Use the arrow keys to move Chef Cocô around the kitchen table.</p>
-                         <p>Take care not to step into a knife or our Chef will ☠️!</p>
-                        <div id="timer">01:00</div>
+                        <p>Use the <span>arrow keys to move Chef Cocô</span> around the kitchen table.</p>
+                        <p>Take care of the knives... If you step into one our Chef will die!</p>
+                        <p>Last but not least, remember you <span>only have 1 minute</span> to pick up all the ingredients.</p>
+                        <br>
+                        <p><span>Click the button to start the game!</span></p>
                     </div>
                     <button id="start">Start Game</button>
                 </div>
@@ -42,8 +47,8 @@
 
         <!--Game Screen-->
         <div id="game" style="display: none;">
-            <div class="grid-2-col">
-                <div class="ingredients col --small">
+            <div class="col-2">
+                <div class="ingredients col width-50">
                     <h2>Ingredients List</h2>
                         <ul id="list">
                             <li>Your shopping basket is empty...</li>
