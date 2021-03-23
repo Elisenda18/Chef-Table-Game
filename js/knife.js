@@ -10,7 +10,7 @@ class Knife {
     }
 
     _draw(ctx) {
-        this.image.src = "/img/bloddyKnife.png";
+        this.image.src = "./img/bloddyKnife.png";
         ctx.drawImage(
             this.image,
             this.x,
