@@ -3,10 +3,10 @@
 class Chef {
     constructor() {
         this.initialPosition = {
-            x: 250, 
-            y: 420, 
-            width: 80,
-            height: 80
+            x: 225, 
+            y: 400, 
+            width: 100,
+            height: 100
         };
         this.score = 0;
         this.currentPosition = {...this.initialPosition};
