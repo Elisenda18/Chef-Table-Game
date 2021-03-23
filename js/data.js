@@ -3,7 +3,7 @@
 const dataIngredients = [
     {
        name: "Eggplant",
-       img: "./img/eggplant.png",
+       img: "img/eggplant.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
        width: 40,
@@ -11,7 +11,7 @@ const dataIngredients = [
     },
     {
        name: "Fish",
-       img: "./img/fish.png",
+       img: "img/fish.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
        width: 50,
@@ -19,7 +19,7 @@ const dataIngredients = [
     },
     {
        name: "Frying Pan",
-       img: "./img/frying-pan.png",
+       img: "img/frying-pan.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
        width: 60,
@@ -27,7 +27,7 @@ const dataIngredients = [
     },
     {
        name: "Basil",
-       img: "./img/basil.png",
+       img: "img/basil.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
        width: 40,
@@ -35,7 +35,7 @@ const dataIngredients = [
     },
     {
         name: "Olive Oil",
-        img: "./img/olive-oil.png",
+        img: "img/olive-oil.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
         width: 40,
@@ -43,7 +43,7 @@ const dataIngredients = [
     },
     {
         name: "Salt & Pepper",
-        img: "./img/salt&pepper-min.png",
+        img: "img/salt&pepper-min.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
         width: 50,
@@ -51,7 +51,7 @@ const dataIngredients = [
     },
     {
         name: "Tomato",
-        img: "./img/tomato.png",
+        img: "img/tomato.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
         width: 40,
@@ -59,7 +59,7 @@ const dataIngredients = [
     },
     {
         name: "Zucchini",
-        img: "./img/zucchini.png",
+        img: "img/zucchini.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
         width: 40,
@@ -67,7 +67,7 @@ const dataIngredients = [
     },
     {
         name: "Bell Pepper",
-        img: "./img/pepper.png",
+        img: "img/pepper.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
         width: 40,
@@ -75,7 +75,7 @@ const dataIngredients = [
     },
     {
         name: "Onion",
-        img: "./img/onion.png",
+        img: "img/onion.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
         width: 40,
