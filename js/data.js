@@ -2,67 +2,43 @@
 
 const dataIngredients = [
     {
-       name: "Bread",
-       img: "./img/bread-min.png",
+       name: "Eggplant",
+       img: "./img/eggplant.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
-       width: 80,
-       height: 70
+       width: 40,
+       height: 40
     },
     {
-       name: "Cheese",
-       img: "./img/cheese-min.png",
-       x: Math.floor(Math.random() * (440 - 60) + 60),
-       y: Math.floor(Math.random() * (440 - 60) + 60),
-       width: 50,
-       height: 50
-    },
-    {
-       name: "Chopping Board",
-       img: "./img/choppingboard-min.png",
+       name: "Fish",
+       img: "./img/fish.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
        width: 50,
        height: 50
     },
     {
-       name: "Cookbook",
-       img: "./img/cookbook-min.png",
+       name: "Frying Pan",
+       img: "./img/frying-pan.png",
        x: Math.floor(Math.random() * (440 - 60) + 60),
        y: Math.floor(Math.random() * (440 - 60) + 60),
-       width: 50,
-       height: 50
+       width: 60,
+       height: 60
     },
     {
-        name: "Milk",
-        img: "./img/milk-min.png",
+       name: "Basil",
+       img: "./img/basil.png",
+       x: Math.floor(Math.random() * (440 - 60) + 60),
+       y: Math.floor(Math.random() * (440 - 60) + 60),
+       width: 40,
+       height: 40
+    },
+    {
+        name: "Olive Oil",
+        img: "./img/olive-oil.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
         width: 40,
-        height: 50
-    },
-    {
-        name: "Mushrooms",
-        img: "./img/mushrooms-min.png",
-        x: Math.floor(Math.random() * (440 - 60) + 60),
-        y: Math.floor(Math.random() * (440 - 60) + 60),
-        width: 50,
-        height: 50
-    },
-    {
-        name: "Pan",
-        img: "./img/pan-min.png",
-        x: Math.floor(Math.random() * (440 - 60) + 60),
-        y: Math.floor(Math.random() * (440 - 60) + 60),
-        width: 50,
-        height: 50
-    },
-    {
-        name: "Pineapple",
-        img: "./img/pineapple-min.png",
-        x: Math.floor(Math.random() * (440 - 60) + 60),
-        y: Math.floor(Math.random() * (440 - 60) + 60),
-        width: 50,
         height: 50
     },
     {
@@ -74,20 +50,36 @@ const dataIngredients = [
         height: 50
     },
     {
-        name: "Chilli Paprika",
-        img: "./img/spicy-min.png",
+        name: "Tomato",
+        img: "./img/tomato.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
-        width: 50,
-        height: 50
+        width: 40,
+        height: 40
     },
     {
-        name: "Palettte Knife",
-        img: "./img/tool-min.png",
+        name: "Zucchini",
+        img: "./img/zucchini.png",
         x: Math.floor(Math.random() * (440 - 60) + 60),
         y: Math.floor(Math.random() * (440 - 60) + 60),
-        width: 50,
-        height: 50
+        width: 40,
+        height: 40
+    },
+    {
+        name: "Bell Pepper",
+        img: "./img/pepper.png",
+        x: Math.floor(Math.random() * (440 - 60) + 60),
+        y: Math.floor(Math.random() * (440 - 60) + 60),
+        width: 40,
+        height: 40
+    },
+    {
+        name: "Onion",
+        img: "./img/onion.png",
+        x: Math.floor(Math.random() * (440 - 60) + 60),
+        y: Math.floor(Math.random() * (440 - 60) + 60),
+        width: 40,
+        height: 40
     }
 ];
 

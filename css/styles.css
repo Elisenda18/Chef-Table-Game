@@ -3,6 +3,7 @@ body {
   font-family: 'Merriweather', serif;
   font-size: 16px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 body {
@@ -121,6 +122,21 @@ li {
   font-size: 1.5em;
   padding: 1.5em;
 }
+
+/*Win Screen */
+#winning-gif > img {
+  padding: 1em;
+  height: 15em;
+  width: 25em;
+}
+
+/*Game Over */
+#lostGame-gif > img {
+  padding: 1em;
+  height: 15em;
+  width: 25em;
+}
+
 
 
 

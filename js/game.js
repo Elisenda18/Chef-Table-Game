@@ -15,7 +15,7 @@ class Game {
     }
 
     _drawBackground () {
-        this.background.src = "/img/background.jpg";
+        this.background.src = "/img/canvas-background.jpg";
         this.ctx.drawImage(
             this.background,
             0,
@@ -105,7 +105,6 @@ class Game {
         //Taking ingredients
         if (this.chef.collidesWithObject(this.chef.currentPosition, this.ingredienToPrint[0])) {
             this.pickedIngredients.push(this.ingredienToPrint[0]);
-            console.log(this.pickedIngredients);
             this._renderIngredients();
             this._generateIngredient();
             this.chef.scoreUp();
