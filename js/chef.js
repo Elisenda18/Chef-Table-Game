@@ -14,7 +14,7 @@ class Chef {
     }
 
     _draw(ctx) {
-        this.imageChef.src = "./img/baker.png";
+        this.imageChef.src = "img/baker.png";
         ctx.drawImage(
             this.imageChef, 
             this.currentPosition.x, 
