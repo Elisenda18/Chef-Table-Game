@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         document.getElementById("gamewon").style="display: none;";
 
         const startBtn = document.getElementById("start");
-        startBtn.addEventListener("click", startGame)
+        startBtn.addEventListener("click", startGame);
     }
 
 
@@ -38,6 +38,17 @@ document.addEventListener("DOMContentLoaded", ()=> {
         document.getElementById("game").style="display: block;";
         document.getElementById("gameover").style ="display: none;";
         document.getElementById("gamewon").style="display: none;";
+
+        let timeLeft = 60;
+        let countDownID = setInterval(()=>{
+            document.getElementById("timer").innerHTML = `${timeLeft} seconds remaining`;
+            timeLeft -=1;
+            if(timeLeft === 0) {
+                clearInterval(countDownID);
+                document.getElementById("timer").innerHTML = `${timeLeft} seconds remaining`;
+                gameOver()
+            }
+        },1000)
 
         const chefsGame = new Game(
             {
