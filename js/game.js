@@ -43,7 +43,6 @@ class Game {
 
     _generateKnife() {   
         let newKnife = this.knife[Math.floor(Math.random() * (this.knife.length))];
-    
         this.knifesToPrint.push(newKnife);
     }
 
@@ -112,7 +111,7 @@ class Game {
 
         //If the player has take all the ingredients needed > Game Won
         if(!this.ingredients.list.length){
-            clearInterval(this.id);
+            clearInterval(this.idKnives);
             this._clean();
             this._restoreDOMIngredientsList()
             this.gameWon();
@@ -127,7 +126,7 @@ class Game {
         //Colliding with knifes
         for(let i= 0; i< this.knifesToPrint.length; i++) {
             if(this.chef.collidesWithObject(this.chef.currentPosition,this.knifesToPrint[i])) {
-                clearInterval(this.id);
+                clearInterval(this.idKnives);
                 this._clean();
                 this._restoreDOMIngredientsList()
                 this.gameOver();
@@ -143,7 +142,7 @@ class Game {
        this._assignControlsToKeys();
        this.chef._draw(this.ctx);
        this._generateIngredient();
-       this.id = setInterval(() => {
+       this.idKnives = setInterval(() => {
         this._generateKnife();
        }, 5000);
        window.requestAnimationFrame(this._update.bind(this));
