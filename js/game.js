@@ -12,6 +12,9 @@ class Game {
         this.gameOver = gameOver;
         this.gameWon = gameWon;
         this.background = new Image();
+        this.timeLeft = undefined;
+        this.knivesID = undefined;
+        this.countDownID = undefined;
     }
 
     _drawBackground () {
@@ -46,7 +49,6 @@ class Game {
         this.knifesToPrint.push(newKnife);
     }
 
-
     _renderIngredients() {
         let list = document.getElementById("list");
         list.innerHTML = "";
@@ -59,7 +61,6 @@ class Game {
     
     }
     
-
     _assignControlsToKeys() {
         document.addEventListener("keydown", (event) => {
             //As the player moves the Chef it's initial position gets updated & printed again
@@ -95,6 +96,25 @@ class Game {
         list.appendChild(liItem);
     }
 
+    _startTimer() {
+        this.timeLeft = 60;
+
+        this.countDownID = setInterval(()=>{
+            document.getElementById("timer__p").innerHTML = `${this.timeLeft} seconds remaining`;
+            this.timeLeft -=1;
+
+            if (this.timeLeft < 10) {
+                document.getElementById("timer").style = "border: 0.3em solid #ff3b3b;";
+                document.getElementById("timer__p").style = `color: #ff3b3b;`;
+            } 
+            if(this.timeLeft === -2) {
+                clearInterval(this.countDownID);
+                document.getElementById("timer__p").innerHTML = `60 seconds remaining`;
+                this.gameOver();
+            }
+        },1000);
+    }
+
     _update() {
         this._clean();
         this._drawBackground();
@@ -111,7 +131,8 @@ class Game {
 
         //If the player has take all the ingredients needed > Game Won
         if(!this.ingredients.list.length){
-            clearInterval(this.idKnives);
+            clearInterval(this.knivesID);
+            clearInterval(this.countDownID);
             this._clean();
             this._restoreDOMIngredientsList()
             this.gameWon();
@@ -126,25 +147,26 @@ class Game {
         //Colliding with knifes
         for(let i= 0; i< this.knifesToPrint.length; i++) {
             if(this.chef.collidesWithObject(this.chef.currentPosition,this.knifesToPrint[i])) {
-                clearInterval(this.idKnives);
+                clearInterval(this.knivesID);
+                clearInterval(this.countDownID);
                 this._clean();
                 this._restoreDOMIngredientsList()
                 this.gameOver();
                 return
             }
         }
-
         window.requestAnimationFrame(this._update.bind(this));
     }
 
     _start() {
+       this._startTimer();
        this._drawBackground();
        this._assignControlsToKeys();
        this.chef._draw(this.ctx);
        this._generateIngredient();
-       this.idKnives = setInterval(() => {
+       this.knivesID = setInterval(() => {
         this._generateKnife();
-       }, 5000);
+       }, 4000);
        window.requestAnimationFrame(this._update.bind(this));
     }
 
