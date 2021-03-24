@@ -7,7 +7,7 @@ body {
 }
 
 body {
-    background: url("img/screen-background.jpg") no-repeat center center fixed; 
+    background: url("https://raw.githubusercontent.com/Elisenda18/chef-table-game/main/img/background_html.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -45,8 +45,8 @@ span {
 }
 
 #game-container {
-  padding: 0.5rem;
-  margin: 1rem auto;
+  padding: 1.5rem;
+  margin: 2rem auto;
   width: 1000px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -62,7 +62,8 @@ span {
 
 .col-2 {
   display: flex;
-  align-content: center;
+  justify-items: center;
+
 }
 
 .width-50 {
@@ -88,7 +89,7 @@ button:hover {
 #image {
   height: 160px;
   width: 122px;
-  background: url('img/newSprite.png') 0px 0px;
+  background: url('https://raw.githubusercontent.com/Elisenda18/chef-table-game/main/img/newSprite.png') 0px 0px;
 }
 
 /* Instructions Screen*/
@@ -118,25 +119,30 @@ li {
   color: #e2311a;
 }
 
-.ingredients > h2 {
+.h2__smll {
   font-size: 1.5em;
-  padding: 1.5em;
 }
 
-/*Win Screen */
-#winning-gif > img {
+/*Countdown */
+#timer {
+  background-color: white;
+  position: relative;
+  top: -1em;
+  width: 13em;
+  border: 0.3em solid #DCDCDC	;
+}
+
+#timer__p {
+  color: #9c9a9a;
+  font-family: Verdana, sans-serif;
+}
+
+/*Win Screen & Game Over  Gifs*/
+img {
   padding: 1em;
   height: 15em;
   width: 25em;
 }
-
-/*Game Over */
-#lostGame-gif > img {
-  padding: 1em;
-  height: 15em;
-  width: 25em;
-}
-
 
 
 
