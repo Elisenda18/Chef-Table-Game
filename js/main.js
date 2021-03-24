@@ -1,6 +1,7 @@
 'use strict';
 
 let game;
+let timeLeft;
 
 document.addEventListener("DOMContentLoaded", ()=> {
 
@@ -39,16 +40,16 @@ document.addEventListener("DOMContentLoaded", ()=> {
         document.getElementById("gameover").style ="display: none;";
         document.getElementById("gamewon").style="display: none;";
 
-        let timeLeft = 60;
+        timeLeft = 59;
         let countDownID = setInterval(()=>{
             document.getElementById("timer").innerHTML = `${timeLeft} seconds remaining`;
             timeLeft -=1;
-            if(timeLeft === 0) {
+            if(timeLeft <= -2) {
                 clearInterval(countDownID);
-                document.getElementById("timer").innerHTML = `${timeLeft} seconds remaining`;
-                gameOver()
+                document.getElementById("timer").innerHTML = `60 seconds remaining`;
+                gameOver();
             }
-        },1000)
+        },1000);
 
         const chefsGame = new Game(
             {
