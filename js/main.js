@@ -40,22 +40,18 @@ document.addEventListener("DOMContentLoaded", ()=> {
         document.getElementById("gameover").style ="display: none;";
         document.getElementById("gamewon").style="display: none;";
 
-        timeLeft = 59;
+        timeLeft = 60;
         let countDownID = setInterval(()=>{
             document.getElementById("timer__p").innerHTML = `${timeLeft} seconds remaining`;
             timeLeft -=1;
-            if (timeLeft <=9) {
+            if (timeLeft < 10) {
                 document.getElementById("timer").style = "border: 0.3em solid #ff3b3b;";
                 document.getElementById("timer__p").style = `color: #ff3b3b;`;
-            } else {
-                document.getElementById("timer").style =   "border: 0.3em solid #DCDCDC;";
-                document.getElementById("timer__p").style = `color: #9c9a9a;`;
-            }
-
+            } 
             if(timeLeft <= -2) {
-                clearInterval(countDownID);
-                document.getElementById("timer__p").innerHTML = `60 seconds remaining`;
                 gameOver();
+                clearInterval(countDownID);
+                document.getElementById("timer__p").innerHTML = `60 seconds remaining`
             }
         },1000);
 
@@ -74,11 +70,17 @@ document.addEventListener("DOMContentLoaded", ()=> {
     function gameOver() {
         document.getElementById("game").style ="display: none;";
         document.getElementById("gameover").style="display: block;";
+
+        document.getElementById("timer").style =   "border: 0.3em solid #DCDCDC;";
+        document.getElementById("timer__p").style = `color: #9c9a9a;`;
     }
 
     function gameWon() {
         document.getElementById("game").style ="display: none;";
         document.getElementById("gamewon").style="display: block;";
+
+        document.getElementById("timer").style =   "border: 0.3em solid #DCDCDC;";
+        document.getElementById("timer__p").style = `color: #9c9a9a;`;
     }
 
     function animateScript() {
