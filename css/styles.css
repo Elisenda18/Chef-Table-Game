@@ -128,9 +128,13 @@ li {
   background-color: white;
   position: relative;
   top: -1em;
-  width: 15em;
-  height: 1.8em;
-  border: red solid 2px;
+  width: 13em;
+  border: 0.3em solid #DCDCDC	;
+}
+
+#timer__p {
+  color: #9c9a9a;
+  font-family: Verdana, sans-serif;
 }
 
 /*Win Screen & Game Over  Gifs*/
