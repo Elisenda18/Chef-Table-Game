@@ -100,7 +100,7 @@ class Game {
     }
 
     _startTimer() {
-        this.timeLeft = 60;
+        this.timeLeft = 30;
 
         this.countDownID = setInterval(()=>{
             document.getElementById("timer__p").innerHTML = `${this.timeLeft} seconds remaining`;
@@ -112,7 +112,7 @@ class Game {
             } 
             if(this.timeLeft === -2) {
                 clearInterval(this.countDownID);
-                document.getElementById("timer__p").innerHTML = `60 seconds remaining`;
+                document.getElementById("timer__p").innerHTML = `30 seconds remaining`;
                 this.gameOver();
             }
         },1000);
