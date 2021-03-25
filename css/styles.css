@@ -6,8 +6,6 @@ html,
 body {
   font-family: 'Merriweather', serif;
   font-size: 16px;
-  margin: 0;
-  padding: 0;
   overflow-y: hidden;
 }
 
@@ -50,8 +48,8 @@ span {
 }
 
 #game-container {
-  padding: 1.5rem;
-  margin: 2rem auto;
+  padding: 1rem 0rem 0.1rem;
+  margin: 1.5rem auto;
   width: 1000px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -81,6 +79,7 @@ button {
   font-size: 1rem;
   width: 10em;
   padding: 0.65em 0.65em;
+  margin: 0.25em;
   border: 1px solid white;
   text-transform: uppercase;
   border-radius: 25em ;
@@ -101,7 +100,7 @@ button:hover {
 #instructions {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 1);
-  padding: 1em;
+  padding-bottom: 1em;
 }
 
 /*Game Screen*/
