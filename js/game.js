@@ -170,6 +170,4 @@ class Game {
        window.requestAnimationFrame(this._update.bind(this));
     }
 
-
-
 }
