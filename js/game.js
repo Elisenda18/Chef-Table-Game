@@ -29,6 +29,7 @@ class Game {
     }
 
     _generateIngredient() {
+        console.log(this.ingredients.list)
         this.ingredienToPrint.unshift(this.ingredients.list[0]);
         this.ingredients.list.splice(0,1);
     }
@@ -124,13 +125,14 @@ class Game {
         //Taking ingredients
         if (this.chef.collidesWithObject(this.chef.currentPosition, this.ingredienToPrint[0])) {
             this.pickedIngredients.push(this.ingredienToPrint[0]);
+            console.log(this.pickedIngredients)
             this._renderIngredients();
             this._generateIngredient();
             this.chef.scoreUp();
         }
 
         //If the player has take all the ingredients needed > Game Won
-        if(!this.ingredients.list.length){
+        if(this.ingredients.list.length < 0){
             clearInterval(this.knivesID);
             clearInterval(this.countDownID);
             this._clean();
@@ -144,6 +146,7 @@ class Game {
             knife._draw(this.ctx);
         });    
         
+        /*
         //Colliding with knifes
         for(let i= 0; i< this.knifesToPrint.length; i++) {
             if(this.chef.collidesWithObject(this.chef.currentPosition,this.knifesToPrint[i])) {
@@ -155,6 +158,7 @@ class Game {
                 return
             }
         }
+        */
         window.requestAnimationFrame(this._update.bind(this));
     }
 
