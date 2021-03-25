@@ -54,16 +54,17 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     function gameOver() {
         document.getElementById("timer__p").innerHTML = `60 seconds remaining`;
+        document.getElementById("timer").style =   "border: 0.3em solid #DCDCDC;";
+        document.getElementById("timer__p").style = `color: #9c9a9a;`;
 
         document.getElementById("game").style ="display: none;";
         document.getElementById("gameover").style="display: block;";
-
-       document.getElementById("timer").style =   "border: 0.3em solid #DCDCDC;";
-       document.getElementById("timer__p").style = `color: #9c9a9a;`;
     }
 
     function gameWon() {
         document.getElementById("timer__p").innerHTML = `60 seconds remaining`;
+        document.getElementById("timer").style =   "border: 0.3em solid #DCDCDC;";
+        document.getElementById("timer__p").style = `color: #9c9a9a;`;
 
         document.getElementById("game").style ="display: none;";
         document.getElementById("gamewon").style="display: block;";
