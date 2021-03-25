@@ -83,8 +83,6 @@ const dataIngredients = [
     }
 ];
 
-
-
 const dataKnifes = [
     new Knife(135, 345, 40, 45),
     new Knife(280, 118, 40, 45),
@@ -93,11 +91,11 @@ const dataKnifes = [
     new Knife(300, 425, 40, 45),
     new Knife(400, 75, 40, 45),
     new Knife(120, 420, 40, 45),
-    new Knife(365, 145, 40, 45),
-    new Knife(415, 85, 40, 45),
+    new Knife(225, 225, 40, 45),
+    new Knife(415, 160, 40, 45),
     new Knife(220, 320, 40, 45),
-    new Knife(190, 305, 40, 45),
-    new Knife(250, 400, 40, 45),
+    new Knife(390, 305, 40, 45),
+    new Knife(60, 70, 40, 45),
 ];
 
 
