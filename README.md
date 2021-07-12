@@ -65,10 +65,6 @@ HTML5, DOM, **Canvas** and Vanilla **Javascript**
 * Check phase and increase level
   * Increase the speed of knives being created 
 
-## MVP Wireframe
-
-![Alt text](https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/Cc59c887c2a9c4f55be8f2d746ee41db0/projects/Md053a6749e754823bb8b8173fa39a3d81604153255273/pages/d687c4b2f7b34f02999f4d2cb430a3c4/image/d687c4b2f7b34f02999f4d2cb430a3c4.png "Chef's Table Wireframe")
-
 ## Data structure
 __main.js__
 ````
